@@ -6,10 +6,22 @@ public class Main {
         String a = args[0];
         String b = args[1];
 
+        int z,x;
+
+        z = Integer.parseInt(a);
+        x = Integer.parseInt(b);
+
+        a = String.valueOf(Math.max(z, x));
+        b = String.valueOf(Math.min(z, x));
+
         System.out.printf("a: %s\n", a);
         System.out.printf("b: %s\n", b);
 
-        int init = a.length()-b.length();
+        encaixa(a, b);
+    }
+
+    private static void encaixa(String a, String b) {
+        int init = a.length()- b.length();
         if (init<0) {
             System.out.println("false");
             return;
