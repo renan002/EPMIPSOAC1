@@ -1,11 +1,16 @@
 .text
 .globl main
 main:
-        la $a0,$texto                # imprime texto "Hello World"
-        li $v0,4
+        lw $a1,$valor1
+        lw $a2,$valor2
+        sub $a0,$a1,$a2
+        
+        
+        
+        li $v0,1
         syscall
-        li $v0,10                        # termina
+        li $v0,10
         syscall
 .data
-$texto:
-        .asciiz "Hello World"
+$valor1: .word 123456
+$valor2: .word 456
